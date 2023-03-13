@@ -3,8 +3,7 @@
         "UpdateStageName":"SteamCMD Download",
         "UpdateSourcePlatform":"All",
         "UpdateSource":"SteamCMD",
-        "UpdateSourceData":"1110390",
-        "UpdateSourceArgs":"304930"
+        "UpdateSourceData":"1110390"
     },
     {
         "UpdateStageName":"Config Directory Creation",
@@ -42,6 +41,19 @@
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/cp",
         "UpdateSourceArgs":"-rf ./U3DS/1110390/Extras/Rocket.Unturned ./U3DS/1110390/Modules"
+    },
+    {
+        "UpdateStageName":"Download OpenMod",
+        "UpdateSourcePlatform":"All",
+        "UpdateSource":"GithubRelease",
+        "UpdateSourceData":"OpenMod.Unturned.Module.zip",
+        "UpdateSourceArgs":"openmod/openmod",
+        "UpdateSourceTarget":"{{$FullBaseDir}}Modules/",
+        "UnzipUpdateSource":true,
+        "OverwriteExistingFiles":true,
+        "UpdateSourceConditionSetting":"OpenMod",
+        "UpdateSourceConditionValue":"true",
+        "DeleteAfterExtract":true
     },
     {
         "UpdateStageName":"Start Server",
