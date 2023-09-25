@@ -52,7 +52,7 @@
         "UnzipUpdateSource":true,
         "OverwriteExistingFiles":true,
         "UpdateSourceConditionSetting":"OpenMod",
-        "UpdateSourceConditionValue":"true",
+        "UpdateSourceConditionValue":"root:",
         "DeleteAfterExtract":true
     },
     {

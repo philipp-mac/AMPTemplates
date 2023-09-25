@@ -307,10 +307,10 @@
         "IsFlagArgument":false,
         "ParamFieldName":"OpenMod",
         "IncludeInCommandLine":false,
-        "DefaultValue":"false",
+        "DefaultValue":"",
         "EnumValues":{
-            "False":"false",
-            "True":"true"
+            "False":"",
+            "True":"root:"
         }
     }
 ]
