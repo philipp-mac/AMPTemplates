@@ -74,6 +74,7 @@
         "InputType":"password",
         "ParamFieldName":"sv_licenseKey",
         "DefaultValue":"",
+        "Required":true,
         "EnumValues":{}
     },
     {
