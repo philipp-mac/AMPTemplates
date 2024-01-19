@@ -13,7 +13,7 @@ Meta.MinAMPVersion=2.4.2.0
 Meta.SpecificDockerImage=cubecoders/ampbase:wine8
 Meta.DockerRequired=False
 Meta.ContainerPolicy=SupportedOnWindows, RecommendedOnLinux
-Meta.ContainerPolicyReason=The server requires Wine 8 to run on Linux. Using a container avoids the need to install these dependencies on the host.
+Meta.ContainerPolicyReason=The server requires Wine 8 and cabextract to run on Linux. Using a container avoids the need to install these dependencies on the host.
 Meta.ExtraSetupStepsURI=https://discourse.cubecoders.com/docs?topic=3322?utm_source=ampcreate&utm_content=arkse
 Meta.Prerequsites=[]
 Meta.ExtraContainerPackages=[]
