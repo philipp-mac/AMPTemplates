@@ -18,14 +18,16 @@
         "UpdateSourcePlatform":"Linux",
         "UpdateSource":"Executable",
         "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'rm -rf {{$FullBaseDir}}server/alpine/*'"
+        "UpdateSourceArgs":"-c 'rm -rf {{$FullBaseDir}}server/alpine/*'",
+        "SkipOnFailure":true
     },
     {
         "UpdateStageName":"Delete Binary Directory Contents",
         "UpdateSourcePlatform":"Windows",
         "UpdateSource":"Executable",
         "UpdateSourceData":"cmd.exe",
-        "UpdateSourceArgs":"/C del /Q /F {{$FullBaseDir}}server\\alpine\\*"
+        "UpdateSourceArgs":"/C del /Q /F {{$FullBaseDir}}server\\alpine\\*",
+        "SkipOnFailure":true
     },
     {
         "UpdateStageName":"Server Download",
