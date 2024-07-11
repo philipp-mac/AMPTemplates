@@ -1,31 +1,11 @@
 [
     {    
         "UpdateStageName":"SteamCMD Download",
-        "UpdateSourcePlatform":"Windows",
+        "UpdateSourcePlatform":"All",
         "UpdateSource":"SteamCMD",
         "UpdateSourceData":"1639880",
-        "UpdateSourceArgs":"1635450"
-    },
-    {
-        "UpdateStageName":"Clone GitHub Repo",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"GitRepo",
-        "UpdateSourceData":"https://github.com/Uuvana-Studios/longvinter-linux-server.git",
-        "UpdateSourceTarget":"{{$FullBaseDir}}"
-    },
-    {
-        "UpdateStageName":"Update GitHub Repo",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"Executable",
-        "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'cd longvinter/1639880 && git restore . >/dev/null 2>&1 && sleep 1 && git stash >/dev/null 2>&1 && git pull \"https://github.com/Uuvana-Studios/longvinter-linux-server.git\" main'",
-        "SkipOnFailure":false
-    },
-    {
-        "UpdateStageName":"Set Binary Executable Flag",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"SetExecutableFlag",
-        "UpdateSourceArgs":"{{$FullBaseDir}}Longvinter/Binaries/Linux/LongvinterServer-Linux-Shipping"
+        "UpdateSourceArgs":"1635450",
+        "UpdateSourceVersion":"{{ServerBranch}}"
     },
     {
         "UpdateStageName":"SteamCMD Component Download",
