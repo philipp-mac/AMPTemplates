@@ -178,5 +178,22 @@
         "IncludeInCommandLine":false,
         "DefaultValue":"2",
         "Suffix":"tents"
+    },
+    {
+        "DisplayName":"Server Branch",
+        "Category":"SteamCMD and Updates",
+        "Description":"Sets the server branch to install. Update the server after switching branches",
+        "Keywords":"server,branch,public,experimental",
+        "FieldName":"ServerBranch",
+        "InputType":"enum",
+        "ParamFieldName":"ServerBranch",
+        "DefaultValue":"public",
+        "EnumValues":{
+            "public":"Public (default)",
+            "experimental":"Experimental build",
+            "1.13":"1.13 build (modding compatibility)",
+            "1.11":"1.11 build (modding compatibility)",
+            "1.10b":"1.10b build (modding compatibility)"
+        }
     }
 ]
