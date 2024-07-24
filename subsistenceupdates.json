@@ -37,5 +37,12 @@
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c 'wget -q -N https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks && chmod +x winetricks && ./winetricks -q win7 vcrun6 vcrun2019 corefonts d3dcompiler_43 d3dx9 dotnet40'"
+    },
+    {
+        "UpdateStageName": "Update engine.ini",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'echo -e \"[Engine.GameEngine]\\nPort=7797\\nPeerPort=7798\\n\\n[DevOptions.Shaders]\\nAutoReloadChangedShaders=False\\nbAllowMultiThreadedShaderCompile=True\\nbAllowDistributedShaderCompile=True\\nNumUnusedShaderCompilingThreads=2\\nThreadedShaderCompileThreshold=2\\nbPromptToRetryFailedShaderCompiles=False\\n\\n[OnlineSubsystemSteamworks.IpNetDriverSteamworks]\\nbSteamSocketsOnly=False\\n\\n[IpDrv.TcpNetDriver]\\nAllowPeerConnections=True\" >> {{$FullBaseDir}}UDKGame/Config/UDKEngine.ini'"
     }
 ]
