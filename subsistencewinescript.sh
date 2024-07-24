@@ -2,9 +2,13 @@
 
 SCRIPT_NAME=$(echo \"$0\" | xargs readlink -f)
 SCRIPTDIR=$(dirname "$SCRIPT_NAME")
+USER_TMP_DIR="$SCRIPTDIR/.X11-unix"
+
+mkdir -p "$USER_TMP_DIR"
+export X11_UNIX_SOCKET="$USER_TMP_DIR/.X11-unix"
 
 exec 6>display.log
-/usr/bin/Xvfb -displayfd 6 &
+/usr/bin/Xvfb -fp "$USER_TMP_DIR" -displayfd 6 &
 XVFB_PID=$!
 while [[ ! -s display.log ]]; do
   sleep 1
