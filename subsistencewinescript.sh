@@ -5,10 +5,12 @@ SCRIPTDIR=$(dirname "$SCRIPT_NAME")
 USER_TMP_DIR="$SCRIPTDIR/.X11-unix"
 
 mkdir -p "$USER_TMP_DIR"
-export X11_UNIX_SOCKET="$USER_TMP_DIR/.X11-unix"
+chmod 1777 "$USER_TMP_DIR"
+export XDG_RUNTIME_DIR="$USER_TMP_DIR"
+export XAUTHORITY="$USER_TMP_DIR/.Xauthority"
 
 exec 6>display.log
-/usr/bin/Xvfb -fp "$USER_TMP_DIR" -displayfd 6 &
+/usr/bin/Xvfb -fp "$USER_TMP_DIR" -displayfd 6 -screen 0 1024x768x24 &
 XVFB_PID=$!
 while [[ ! -s display.log ]]; do
   sleep 1
