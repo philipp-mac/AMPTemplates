@@ -1,16 +1,21 @@
 #!/bin/bash
 
+# Full path to this script
 SCRIPT_NAME=$(echo \"$0\" | xargs readlink -f)
+# Directory of this script
 SCRIPTDIR=$(dirname "$SCRIPT_NAME")
+# Custom directory for X11 sockets
 USER_TMP_DIR="$SCRIPTDIR/.X11-unix"
 
 # Create the custom X11 socket directory and set permissions
 mkdir -p "$USER_TMP_DIR"
 chmod 1777 "$USER_TMP_DIR"
+
+# Set environment variables
 export XDG_RUNTIME_DIR="$USER_TMP_DIR"
 export XAUTHORITY="$USER_TMP_DIR/.Xauthority"
 
-# Start Xvfb and log to console and file
+# Log to console and file
 exec 6> >(tee display.log)
 exec 7> >(tee winescript_log.txt)
 
@@ -23,11 +28,16 @@ done
 read -r DPY_NUM < display.log
 rm display.log
 
+echo "Xvfb started with display number: $DPY_NUM" | tee /dev/fd/7
+
 export WINEPREFIX="$SCRIPTDIR/subsistence/.wine"
 export WINEDLLOVERRIDES="mscoree,mshtml="
 export WINEARCH=win64
 export WINEDEBUG=fixme-all
 export DISPLAY=:$DPY_NUM
+
+echo "Environment variables:" | tee /dev/fd/7
+env | grep -E 'WINEPREFIX|WINEDLLOVERRIDES|WINEARCH|WINEDEBUG|DISPLAY|XDG_RUNTIME_DIR|XAUTHORITY' | tee /dev/fd/7
 
 echo "Downloading winetricks..." | tee /dev/fd/7
 wget -q -N https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
