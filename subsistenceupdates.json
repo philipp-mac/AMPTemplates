@@ -1,50 +1,33 @@
 [
     {
-        "UpdateStageName":"SteamCMD Download",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"SteamCMD",
-        "UpdateSourceData":"1362640",
-        "UpdateSourceArgs":"418030",
-        "ForceDownloadPlatform":"Windows",
-        "UpdateSourceVersion":"{{ServerBranch}}"
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1362640",
+        "UpdateSourceArgs": "418030",
+        "UpdateSourceVersion": "{{ServerBranch}}"
     },
     {
-        "UpdateStageName":"ServerSettings File Copy",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"CopyFilePath",
-        "UpdateSourceData":"{{$FullBaseDir}}UDKGame/Config/UDKDedServerSettings.ini",
-        "UpdateSourceArgs":"{{$FullBaseDir}}UDKGame/Config/DefaultDedServerSettings.ini",
-        "OverwriteExistingFiles":false
+        "UpdateStageName": "ServerSettings File Copy",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}UDKGame/Config/UDKDedServerSettings.ini",
+        "UpdateSourceArgs": "{{$FullBaseDir}}UDKGame/Config/DefaultDedServerSettings.ini",
+        "OverwriteExistingFiles": false
     },
     {
-        "UpdateStageName":"ServerSettings File Copy",
-        "UpdateSourcePlatform":"All",
-        "UpdateSource":"CopyFilePath",
-        "UpdateSourceData":"{{$FullBaseDir}}UDKGame/Config/UDKEngine.ini",
-        "UpdateSourceArgs":"{{$FullBaseDir}}UDKGame/Config/DefaultEngine.ini",
-        "OverwriteExistingFiles":false
+        "UpdateStageName": "ServerSettings File Copy",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CopyFilePath",
+        "UpdateSourceData": "{{$FullBaseDir}}UDKGame/Config/UDKEngine.ini",
+        "UpdateSourceArgs": "{{$FullBaseDir}}UDKGame/Config/DefaultEngine.ini",
+        "OverwriteExistingFiles": false
     },
     {
-        "UpdateStageName":"Initialise Wine",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"Executable",
-        "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"-c 'WINEPREFIX=\"{{$FullRootDir}}.wine\" WINEARCH=win64 WINEDEBUG=-all /usr/bin/wineboot --init --update'"
-    },
-    {
-        "UpdateStageName":"Winescript Download",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"FetchURL",
-        "UpdateSourceData":"https://raw.githubusercontent.com/Greelan/AMPTemplates/dev/subsistencewinescript.sh",
-        "UpdateSourceArgs":"winescript.sh",
-        "UpdateSourceTarget":"{{$FullInstanceDir}}",
-        "OverwriteExistingFiles":true
-    },
-    {
-        "UpdateStageName":"Install Windows Components",
-        "UpdateSourcePlatform":"Linux",
-        "UpdateSource":"Executable",
-        "UpdateSourceData":"/bin/bash",
-        "UpdateSourceArgs":"./winescript.sh"
+        "UpdateStageName": "Initialise Wine",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c 'WINEPREFIX=\"{{$FullRootDir}}.wine\" WINEARCH=win64 WINEDEBUG=-all /usr/bin/wineboot --init --update'"
     }
 ]
