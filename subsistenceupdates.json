@@ -4,8 +4,9 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "SteamCMD",
         "UpdateSourceData": "1362640",
-        "UpdateSourceArgs": "418030",
-        "UpdateSourceVersion": "{{ServerBranch}}"
+        "UpdateSourceArgs": "",
+        "ForceDownloadPlatform": "Windows",
+        "UpdateSourceVersion": "public"
     },
     {
         "UpdateStageName": "ServerSettings File Copy",
