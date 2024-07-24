@@ -43,6 +43,6 @@
         "UpdateSourcePlatform": "All",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c 'echo -e \"[DevOptions.Shaders]\\nAutoReloadChangedShaders=False\\nbAllowMultiThreadedShaderCompile=True\\nbAllowDistributedShaderCompile=True\\nNumUnusedShaderCompilingThreads=2\\nThreadedShaderCompileThreshold=2\\nbPromptToRetryFailedShaderCompiles=False\\n\\n[OnlineSubsystemSteamworks.IpNetDriverSteamworks]\\nbSteamSocketsOnly=False\\n\\n[IpDrv.TcpNetDriver]\\nAllowPeerConnections=True\" >> {{$FullBaseDir}}UDKGame/Config/UDKEngine.ini'"
+        "UpdateSourceArgs": "-c 'echo -e \"[Engine.GameEngine]\\nPort=7797\\nPeerPort=7798\\n\\n[DevOptions.Shaders]\\nAutoReloadChangedShaders=False\\nbAllowMultiThreadedShaderCompile=True\\nbAllowDistributedShaderCompile=True\\nNumUnusedShaderCompilingThreads=2\\nThreadedShaderCompileThreshold=2\\nbPromptToRetryFailedShaderCompiles=False\\n\\n[OnlineSubsystemSteamworks.IpNetDriverSteamworks]\\nbSteamSocketsOnly=False\\n\\n[IpDrv.TcpNetDriver]\\nAllowPeerConnections=True\" >> {{$FullBaseDir}}UDKGame/Config/UDKEngine.ini'"
     }
 ]
