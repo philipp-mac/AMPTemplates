@@ -1,9 +1,9 @@
-Meta.DisplayName=Subsistence fix
-Meta.Description=Subsistence fix Dedicated Server
+Meta.DisplayName=Subsistence
+Meta.Description=Subsistence Dedicated Server
 Meta.OS=Windows, Linux
 Meta.AarchSupport=Unknown
 Meta.Arch=x86_64
-Meta.Author=P4M.DE/Greelan
+Meta.Author=Greelan
 Meta.URL=https://coldgames.ir/
 Meta.DisplayImageSource=steam:418030
 Meta.EndpointURIFormat=steam://connect/{ip}:{GenericModule.App.Ports.$QueryPort}
@@ -38,7 +38,7 @@ App.WindowsCommandLineArgs=
 App.CommandLineArgs={{$PlatformArgs}} server coldmap1?steamsockets -Port={{$GamePort}} -MultiHome={{$ApplicationIPBinding}} {{$FormattedArgs}} -log
 App.UseLinuxIOREDIR=False
 App.AppSettings={}
-App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"418030","WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64","WINEDEBUG":"-all"}
+App.EnvironmentVariables={"LD_LIBRARY_PATH":"{{$FullBaseDir}}linux64:%LD_LIBRARY_PATH%","SteamAppId":"418030","WINEPREFIX":"{{$FullRootDir}}.wine","WINEARCH":"win64","WINEDEBUG":"-all","DISPLAY":":1"}
 App.CommandLineParameterFormat=-{0}={1}
 App.CommandLineParameterDelimiter= 
 App.ExitMethod=OS_CLOSE
